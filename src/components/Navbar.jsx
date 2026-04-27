@@ -9,7 +9,15 @@ import {
 } from "@mui/material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import { NAV_LINKS } from "../constants/data";
+// import { NAV_LINKS } from "../constants/data";
+export const NAV_LINKS = [
+  "Home",
+  "Shop",
+  "About us",
+  "Services",
+  "Blog",
+  "Contact us",
+];
 
 export default function Navbar() {
   return (
@@ -17,22 +25,25 @@ export default function Navbar() {
       position="static"
       color="transparent"
       elevation={0}
-      sx={{ bgcolor: "#fff", borderBottom: "1px solid #eee" }}
+      sx={{ bgcolor: "#3d5a4c", borderBottom: "none", color: "#f5f5f0" }}
     >
       <Toolbar sx={{ justifyContent: "space-between", px: { xs: 4, md: 12 } }}>
-        <Typography variant="h6" fontWeight={700} color="text.primary" sx={{ letterSpacing: 1 }}>
+        <Typography variant="h6" fontWeight={700} sx={{ letterSpacing: 1 }}>
           Furni<span style={{ color: "#f0a500" }}>.</span>
         </Typography>
-        <Stack direction="row" spacing={1} sx={{ display: { xs: "none", md: "flex" } }}>
+        <Stack
+          direction="row"
+          spacing={1}
+          sx={{ display: { xs: "none", md: "flex" } }}
+        >
           {NAV_LINKS.map((link, i) => (
             <Button
               key={link}
-              color="inherit"
               sx={{
                 fontWeight: i === 0 ? 700 : 400,
-                color: i === 0 ? "primary.main" : "text.secondary",
+                color: "#fff",
                 borderBottom: i === 0 ? "2px solid" : "none",
-                borderColor: "secondary.main",
+                borderColor: "#f0a500",
                 borderRadius: 0,
                 px: 1.5,
               }}
@@ -42,11 +53,11 @@ export default function Navbar() {
           ))}
         </Stack>
         <Stack direction="row" spacing={1}>
-          <IconButton><PersonOutlineIcon /></IconButton>
           <IconButton>
-            <Badge badgeContent={2} color="secondary">
-              <ShoppingCartOutlinedIcon />
-            </Badge>
+            <PersonOutlineIcon sx={{ color: "#f5f5f0" }} />
+          </IconButton>
+          <IconButton>
+            <ShoppingCartOutlinedIcon sx={{ color: "#f5f5f0" }} />
           </IconButton>
         </Stack>
       </Toolbar>

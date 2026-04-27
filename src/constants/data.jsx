@@ -3,7 +3,7 @@ import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import SupportAgentOutlinedIcon from "@mui/icons-material/SupportAgentOutlined";
 import AutorenewOutlinedIcon from "@mui/icons-material/AutorenewOutlined";
 
-export const NAV_LINKS = ["Home", "Shop", "About us", "Services", "Blog", "Contact us"];
+
 
 export const PRODUCTS = [
   {
